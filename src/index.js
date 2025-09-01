@@ -3,6 +3,7 @@ const handlebars=require('express-handlebars')
 const app=express()
 const port=5000
 const path=require('path')
+const routes=require('./routes.js')
 
 app.engine('hbs',handlebars.engine({
     extname:'hbs'
@@ -10,8 +11,6 @@ app.engine('hbs',handlebars.engine({
 app.set('view engine','hbs')
 app.set('views',path.join(__dirname,'views'))
 app.use(express.static('src/public'))
+app.use(routes)
 
-app.get('/',(req,res)=>{
-    res.render('home',{layout:false})
-})
 app.listen(port,()=>console.log(`server is listening on port ${port} `))
