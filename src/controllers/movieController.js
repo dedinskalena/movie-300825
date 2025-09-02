@@ -6,9 +6,10 @@ router.get('/create',(req,res)=>{
 })
  
 router.post('/create',(req,res)=>{
-    //console.log(req.body)
     const newMovie=req.body
     movieService.create(newMovie)
+   
+    res.redirect('/')
 
 })
 

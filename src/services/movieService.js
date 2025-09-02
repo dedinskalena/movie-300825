@@ -1,7 +1,24 @@
-const movies=[]
+const movies=[
+    {
+   _id:1,
+  title: ' Jungle Cuise',
+  genre: 'adventure',
+  director: 'Spilberg',
+  date: '2019',
+  imgUrl: "/src/public/img/jungle-cruise.jpeg",
+  rating: '5',
+  description: 'Dreaming about saving countless lives and having another adventure'  
+}
+]
 
 
 exports.create=(movieData)=>{
-    //console.log(movieData)
-    movies.push(movieData)
+  movieData._id=movies[movies.length-1]._id+1
+  movies.push(movieData)
+  //console.log(movieData)
+   
+}
+exports.getAll=()=>{
+   
+  return movies.slice()
 }
