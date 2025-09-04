@@ -17,7 +17,9 @@ router.get('/movies/:movieId',(req,res)=>{
     const movieId=req.params.movieId
     //console.log(movieId)
     const movie= movieService.getOne(movieId)
-    console.log(movie)
+    let count=Number(movie.rating)
+    movie.ratingStars='&#x2605;'.repeat(count)
+    //console.log(movie)
     res.render('details',{movie})
 })
 

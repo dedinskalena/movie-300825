@@ -6,7 +6,7 @@ const movies=[
   director: 'Spilberg',
   date: '2019',
   imgUrl: "/img/jungle-cruise.jpeg",
-  rating: '5',
+  rating: '3',
   description: 'Dreaming about saving countless lives and having another adventure'  
 }
 ]

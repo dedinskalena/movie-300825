@@ -3,29 +3,7 @@
                 <h2>All Movies</h2>
                 <div class="band">
 
-                    <!-- If there are posts for creature in the database display each of them -->
-                    {{#each movies}}
-                    <div class="flip flip-vertical">
-                        <div class="front">
-                            <img src={{imgUrl}}
-                                alt={{title}}>
-                        </div>
-                        <div class="back">
-                            <h1>{{title}}</h1>
-                            <h2>Genre: {{genre}}</h2>
-                            <p>Description:{{description}}</p>
-                            <a href="/movies/{{_id}}" class="details">Details</a>
-                        </div>
-                    </div>
-                    {{else}}
-                     <div class="no-posts">
-                        <p class="no-offer">There are no movie yet...</p>
-                    </div> 
-                    {{/each}}
-
-            
-
-                    <!-- If there are still no posts in the database display: -->
+               {{>catalogMovies}}
                     
                 </div>
             </section>
