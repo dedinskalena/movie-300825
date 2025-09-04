@@ -5,7 +5,7 @@ const movies=[
   genre: 'adventure',
   director: 'Spilberg',
   date: '2019',
-  imgUrl: "/src/public/img/jungle-cruise.jpeg",
+  imgUrl: "/img/jungle-cruise.jpeg",
   rating: '5',
   description: 'Dreaming about saving countless lives and having another adventure'  
 }
@@ -21,4 +21,7 @@ exports.create=(movieData)=>{
 exports.getAll=()=>{
    
   return movies.slice()
+}
+exports.getOne=(movieId)=>{
+  return movies.find(movie=>movie._id==movieId)
 }

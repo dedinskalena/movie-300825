@@ -13,4 +13,12 @@ router.post('/create',(req,res)=>{
 
 })
 
+router.get('/movies/:movieId',(req,res)=>{
+    const movieId=req.params.movieId
+    //console.log(movieId)
+    const movie= movieService.getOne(movieId)
+    console.log(movie)
+    res.render('details',{movie})
+})
+
 module.exports=router
