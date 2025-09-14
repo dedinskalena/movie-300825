@@ -14,7 +14,9 @@
     "nodemon": "^3.1.10"
   },
   "dependencies": {
+    "cjs-loader": "^0.1.0",
     "express": "^5.1.0",
-    "express-handlebars": "^8.0.3"
+    "express-handlebars": "^8.0.3",
+    "mongoose": "^8.18.1"
   }
 }
