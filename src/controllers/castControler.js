@@ -1,8 +1,8 @@
 const router=require('express').Router()
 
 
-router.get('/cast/create',(req,res)=>{
-    
+router.get('/create',(req,res)=>{
+    res.render('cast/cast-create')
 })
 
 
