@@ -7,7 +7,7 @@ router.get('/create',(req,res)=>{
  
 router.post('/create', async (req,res)=>{
      const newMovie=req.body
-     console.log(newMovie)
+    // console.log(newMovie)
 //     movieService.create(newMovie)
 //         res.status(200).json({message:'Add movie'})
 
@@ -21,10 +21,11 @@ router.post('/create', async (req,res)=>{
 
 })
 
-router.get('/movies/:movieId',(req,res)=>{
+router.get('/movies/:movieId',async (req,res)=>{
     const movieId=req.params.movieId
     //console.log(movieId)
-    const movie= movieService.getOne(movieId)
+    const movie=await movieService.getOne(movieId).lean()
+    //console.log(movie)
     let count=Number(movie.rating)
     movie.ratingStars='&#x2605;'.repeat(count)
     //console.log(movie)

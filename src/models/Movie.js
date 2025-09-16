@@ -8,7 +8,7 @@ const movieShema=new mongoose.Schema({
     year:{type:Number,required:true,min:1900,max:2025},
     rating:{type:Number,required:true,min:1,max:5},
     description:{type:String,required:true,maxLength:1000},
-    imageUrl:{type:String,required:true,match:/^https?/}
+    imageUrl:{type:String,required:true,match:/^https?:\/\//}
 
 })
 
