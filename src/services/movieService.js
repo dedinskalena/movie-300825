@@ -46,3 +46,10 @@ if(year){
   //console.log(result)
   return result
 }
+
+exports.attach= (movieId,castId)=>{
+  // const movie=await this.getOne(movieId)
+  // movie.casts.push(castId)
+  // return movie.save()
+  return Movie.findByIdAndUpdate(movieId,{$push:{casts:castId}})
+}
