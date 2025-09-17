@@ -9,8 +9,8 @@ const castShcema=new mongoose.Schema({
     castImage:{type:String,required:true,validate:{
         validator:function(value){
             return /^https?:\/\//.test(value)
-        },
-        message:(props)=`${props.value} is invalid URL`
+        }
+       
         }
     },
      
