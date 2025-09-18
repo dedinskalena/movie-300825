@@ -29,7 +29,7 @@ exports.getAll= ()=>{
 }
 exports.getOne=(movieId)=>{
  // return movies.find(movie=>movie._id==movieId)
- return Movie.findById(movieId)
+ return Movie.findById(movieId).populate('casts')
 }
 exports.search= async(title,genre,year)=>{
   let result=await Movie.find().lean()

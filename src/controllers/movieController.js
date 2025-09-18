@@ -29,7 +29,8 @@ router.get('/movies/:movieId',async (req,res)=>{
     //console.log(movie)
     let count=Number(movie.rating)
     movie.ratingStars='&#x2605;'.repeat(count)
-    //console.log(movie)
+     
+    
     res.render('details',{movie})
 })
 router.get('/movies/:movieId/attach',async (req,res)=>{
