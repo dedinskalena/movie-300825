@@ -52,4 +52,8 @@ router.post('/movies/:movieId/attach',async (req,res)=>{
 
 
 })
+
+router.get('/movies/:moviesId/edit',(req,res)=>{
+    res.render('movie/edit')
+})
 module.exports=router
