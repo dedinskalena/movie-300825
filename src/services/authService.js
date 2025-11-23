@@ -1,8 +1,8 @@
 const User=require ('../models/User')
 const bcrypt=require('bcrypt')
 const jwt=require('../lib/jwt')
- 
-const secret='aswetugjjbnjk#;lkj'
+const {secret}=require('../config/config')
+
 exports.register=(userData)=>User.create(userData)
 
 exports.login=async (email,password)=>{
