@@ -29,12 +29,15 @@ router.get('/movies/:movieId',async (req,res)=>{
     const movieId=req.params.movieId
     //console.log(movieId)
     const movie=await movieService.getOne(movieId).lean()
-    //console.log(movie)
+     
+    const isOwner=movie.owner==req.user?._id
+    
+
     let count=Number(movie.rating)
     movie.ratingStars='&#x2605;'.repeat(count)
      
     
-    res.render('movie/details',{movie})
+    res.render('movie/details',{movie,isOwner})
 })
 router.get('/movies/:movieId/attach',isAuth,async (req,res)=>{
     const movie=await movieService.getOne(req.params.movieId).lean()
